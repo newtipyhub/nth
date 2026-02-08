@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game App Landing Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #b3d9ff;
+      color: #333;
+    }
+
+    /* Announcement Bar */
+    .announcement-bar {
+      position: relative;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(90deg, #ff6f00, #ff8f00);
+      padding: 10px 16px;
+      overflow: hidden;
+      color: #fff;
+      font-weight: 500;
+    }
+    .scroll-container {
+      flex: 1;
+      overflow: hidden;
+      white-space: nowrap;
+      padding-right: 110px;
+    }
+    .scroll-text {
+      display: inline-block;
+      padding-left: 100%;
+      animation: scroll-left 15s linear infinite;
+      white-space: nowrap;
+    }
+    @keyframes scroll-left {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+    .announcement-btn {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #fff;
+      color: #ff6f00;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: bold;
+      text-decoration: none;
+      animation: flashBtn 1.5s infinite;
+    }
+    @keyframes flashBtn {
+      0%,100% { box-shadow: 0 0 0 rgba(255,255,255,0); }
+      50% { box-shadow: 0 0 10px rgba(255,255,255,0.8); }
+    }
+
+    /* App List */
+    .app-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .app-card {
+      background: rgba(255,255,255,0.95);
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      animation: fadeInUp 1s ease forwards;
+    }
+    .app-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .app-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 10px;
+    }
+    .app-title {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .app-rating { color: #f5a623; }
+    .app-reward { color: #27ae60; font-size: 14px; }
+    .download-btn {
+      background: #28a745;
+      color: #fff;
+      padding: 10px;
+      border-radius: 6px;
+      text-decoration: none;
+      text-align: center;
+      margin-top: 12px;
+      font-weight: bold;
+      animation: pulse 2s infinite;
+    }
+
+    /* Counters */
+    .counter-section {
+      text-align: center;
+      margin: 30px 20px;
+    }
+    .counter {
+      font-size: 26px;
+      font-weight: bold;
+      margin: 10px;
+    }
+    .counter-label { font-size: 14px; }
+
+    /* Winner Section */
+    .winners {
+      text-align: center;
+      margin: 40px 10px;
+    }
+    .winner-slide {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .winner-img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    /* Referral Section */
+    .referral-section {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+    .referral-section h2 {
+      margin-top: 0;
+    }
+    .referral-section input {
+      width: 100%;
+      padding: 8px;
+      margin: 6px 0 12px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    .referral-section button {
+      background: #007bff;
+      color: #fff;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .result-box { margin-top: 15px; }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      background: rgba(0,0,0,0.1);
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(40,167,69,0.4); }
+      70% { box-shadow: 0 0 0 10px rgba(40,167,69,0); }
+      100% { box-shadow: 0 0 0 0 rgba(40,167,69,0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="scroll-container">
+      <div class="scroll-text">
+        🚀 New Game Launched: Play Teen Patti Star & Win Daily Rewards up to ₹50,000!
+      </div>
+    </div>
+    <a href="https://indrummys.com/?code=R9ATL63TE52&t=1770570381" class="announcement-btn">Play Now</a>
+  </div>
+
+  <!-- App List -->
+  <div class="app-list">
+    <div class="app-card">
+      <div class="app-left">
+        <img src="https://indrummy4.com/logo.png" />
+        <div>
+          <div class="app-title">Ind Rummy Game App</div>
+          <div class="app-rating">★★★★★ 4.6</div>
+          <div class="app-reward"Join IndRummy Now! Play & win instantly—fast cashout, secure gameplay, real rewards.</div>
+        </div>
+      </div>
+      <a href="https://indrummy4.com/?code=R9ATL63TE52&t=1770570038" class="download-btn">Download Now</a>
+    </div>
+  </div>
+
+  <!-- Counters -->
+  <div class="counter-section">
+    <div class="counter" id="downloadCount">50,000</div>
+    <div class="counter-label">Total Downloads</div>
+    <div class="counter" id="rewardCount">100,000</div>
+    <div class="counter-label">Total Rewards (₹)</div>
+  </div>
+
+  <!-- Winner Section -->
+  <div class="winners">
+    <div class="winner-slide">
+      <img id="winnerImg" src="https://randomuser.me/api/portraits/men/1.jpg" class="winner-img" />
+      <span id="winnerName">Amit</span> won ₹<span id="winnerAmount">10537</span>
+    </div>
+  </div>
+
+  <!-- Referral Calculator -->
+  <div class="referral-section">
+    <h2>Referral Earnings Calculator</h2>
+    <label>Friends Registered</label>
+    <input type="number" id="friendsRegistered" value="0" />
+
+    <label>Friends First Deposit</label>
+    <input type="number" id="firstDeposits" value="0" />
+
+    <label>Total Bet Amount (₹)</label>
+    <input type="number" id="friendsBet" value="0" />
+
+    <label>Bet Tax (₹)</label>
+    <input type="number" id="betTax" value="0" />
+
+    <button onclick="calculateEarnings()">Calculate Earnings</button>
+
+    <div class="result-box">
+      Total Earnings: ₹<span id="totalEarnings">0</span>
+    </div>
+  </div>
+
+  <footer>© 2026 Game Apps. All rights reserved.</footer>
+
+  <script>
+    let downloads = 50000;
+    let rewards = 100000;
+    const downloadCountEl = document.getElementById('downloadCount');
+    const rewardCountEl = document.getElementById('rewardCount');
+    const winnerNameEl = document.getElementById('winnerName');
+    const winnerAmountEl = document.getElementById('winnerAmount');
+    const winnerImgEl = document.getElementById('winnerImg');
+
+    const winners = [
+      { name: 'Amit', gender: 'male' },
+      { name: 'Raj', gender: 'male' },
+      { name: 'Sneha', gender: 'female' },
+      { name: 'Kiran', gender: 'female' },
+      { name: 'Deepak', gender: 'male' },
+      { name: 'Anjali', gender: 'female' }
+    ];
+
+    setInterval(() => {
+      downloads += Math.floor(Math.random() * 20) + 1;
+      downloadCountEl.textContent = downloads.toLocaleString();
+    }, 2000);
+
+    setInterval(() => {
+      rewards += Math.floor(Math.random() * 450) + 50;
+      rewardCountEl.textContent = rewards.toLocaleString();
+    }, 3000);
+
+    setInterval(() => {
+      const winner = winners[Math.floor(Math.random() * winners.length)];
+      const amount = Math.floor(Math.random() * 14500 + 1000) * 2 - 1;
+      winnerNameEl.textContent = winner.name;
+      winnerAmountEl.textContent = amount.toLocaleString();
+      const imgId = Math.floor(Math.random() * 90) + 1;
+      const genderPath = winner.gender === 'male' ? 'men' : 'women';
+      winnerImgEl.src = `https://randomuser.me/api/portraits/${genderPath}/${imgId}.jpg`;
+    }, 4000);
+
+    function calculateEarnings() {
+      const friendsRegistered = parseInt(document.getElementById('friendsRegistered').value) || 0;
+      const firstDeposits = parseInt(document.getElementById('firstDeposits').value) || 0;
+      const friendsBet = parseFloat(document.getElementById('friendsBet').value) || 0;
+      const betTax = parseFloat(document.getElementById('betTax').value) || 0;
+
+      const total = (friendsRegistered * 5) + (firstDeposits * 20) + (friendsBet * 0.01) + (betTax * 0.9);
+      document.getElementById('totalEarnings').textContent = total.toFixed(2);
+    }
+  </script>
+</body>
+</html>
+
